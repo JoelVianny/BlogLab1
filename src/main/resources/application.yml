@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: BlogPost
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/blog
+    driver-class-name: org.postgresql.Driver
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+    mvc:
+      throw-exception-if-no-handler-found: true
+      async:
+        request-timeout: 3600000
+  server:
+    port: 8080
+    error:
+      path: /user/error
+      whitelabel:
+        enabled: false
